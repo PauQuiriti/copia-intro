@@ -2,7 +2,7 @@ let album;
 let objectToSend = {}
 const albumId = window.location.href.split('album=')[1]
 const getAlbum = async () =>{
-    const {data} = await axios.get(`https://copia-intro.vercel.app/band/${albumId}`)
+    const {data} = await axios.get(`https://copia-intro.vercel.app/api/band/${albumId}`)
     album= data.data
 }
 getAlbum()
@@ -14,7 +14,7 @@ const changeAlbum = async(e)=>{
     e.preventDefault()
     getInputValues()
     try{
-       await axios.put(`https://copia-intro-vercel.app/band/${album._id}`,objectToSend)
+       await axios.put(`https://copia-intro-vercel.app/api/band/${album._id}`,objectToSend)
        swal({
         title: 'Album edited!',
         text: 'You modified the album!',

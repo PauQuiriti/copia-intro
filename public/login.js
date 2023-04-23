@@ -10,7 +10,7 @@ const loginUser = async (e) => {
     e.preventDefault()
     getInputValues()
     try{
-     const response = await axios.post(`https://copia-intro.vercel.app/login`,objectToSend)
+     const response = await axios.post(`https://copia-intro.vercel.app/api/login`,objectToSend)
      localStorage.setItem('token',response.data.id) // aca seteariamos el token si les parece ok
      swal({
       title: 'Success!',

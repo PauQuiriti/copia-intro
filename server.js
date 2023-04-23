@@ -15,7 +15,7 @@ app.use(express.static('public'))
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
-app.use('/', routes)
+app.use('/api', routes)
 
 mongoose.connect(uri).
 then(() => {
