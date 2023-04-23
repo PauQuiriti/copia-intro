@@ -1,0 +1,108 @@
+body {
+    background-color: #fbfbfb;
+    color: whitesmoke;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  h2,
+  h4 {
+    text-align: center;
+    color: black;
+  }
+  .discography {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+  }
+  .favorite{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  i{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: yellow
+
+  }
+  .container {
+    width: 70%;
+    overflow: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0, 24px;
+    border: 2px solid white;
+    padding: 20px;
+  }
+  
+  .box {
+    height: 100px;
+    width: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 14px;
+  }
+  
+  .box img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  
+  .info{
+      background-color: #bcbabc;
+      text-align: center;
+      padding:20px;
+      margin-top: 40px;
+  }
+  
+  .formulario{
+      display:flex;
+      justify-content: center;
+      margin-top: 40px;
+  }
+  
+  form{
+      width: 70%;
+      text-align: center;
+      background-color: #0a0a0af6;
+  }
+  
+  input{
+      display: block;
+      text-align: center;
+      margin: 10px auto;
+  }
+  input[type=submit]{
+      margin-top: 20px;
+  }
+
+.tour-dates  {
+    text-align: center;
+}
+
+a{
+    padding:10px;
+    background-color: #520101f6;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+a:visited{
+    color:black;
+}
+
+.position-trash{
+  position:relative;
+  top: 40px;
+  left: 6px;
+}
+
+

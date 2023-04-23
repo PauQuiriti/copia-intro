@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="bg-[url('https://www.elnacional.cat/uploads/s1/15/51/89/99/nirvana.jpeg')]">
+<div class=" flex flex-row h-screen">
+    <div class="bg-black w-1/5 h-100 " id="sidebar">
+        <div class=" flex flex-row mt-3 border-2 border-black py-4 border-b-slate-100" >
+            <img class="rounded-full h-16 w-16 pl-2 " src="https://cdn.vox-cdn.com/thumbor/dX7aZ2FDja1U45C1V_U6eP0WVCo=/0x0:3000x2000/1200x800/filters:focal(1260x760:1740x1240)/cdn.vox-cdn.com/uploads/chorus_image/image/70978837/60_songs_hole_getty_ringer.0.jpg" alt="'user">
+            <h3 class="text-white font-semibold align-middle pl-3 pt-3 py-6" >Courtney Love</h3>
+            
+        </div>
+        <div  class="text-white font-semibold pt-6 py-6 text-center hover:bg-gray-400 border-2 border-black border-b-slate-100 active:bg-teal-800 focus:outline-none focus:ring focus:ring-sky-300 cursor-pointer "><a href="index.html">Other albums</a></div>
+        <div  class="text-white font-semibold pt-6 py-6 text-center hover:bg-gray-400 border-2 border-black border-b-slate-100 active:bg-teal-800 focus:outline-none focus:ring focus:ring-sky-300 cursor-pointer " ><a href="editForm.html">Edit Album</a></div>
+        <div  class="text-white font-semibold py-6 text-center border-2  hover:bg-gray-400 border-black border-b-slate-100 cursor-pointer "  ><a href="addSongs.html">Add Songs</a></div>
+        <div  class="text-white font-semibold pt-6 py-6 text-center hover:bg-gray-400 border-2 border-black border-b-slate-100 active:bg-teal-800 focus:outline-none focus:ring focus:ring-sky-300 cursor-pointer "  onclick="window.location.href = './login.html'">Log Out</div>
+    </div>
+    <section  class="flex flex-col text-center items-center justify-center w-full"  class="edit-modal"  >
+        <div  class="text-white text-center font-bold text-4xl mb-10 edit-modal">Edit Album</div>
+        <form  class=" text-center edit-modal  w-3/4 ">
+            <div class="flex flex-col items-center justify-center" >
+                 <label for="title" class="text-sm text-center  text-white font-bold text-gray-900">Title</label>
+                 <input type="text" id="title" class="w-3/4 h-10 px-3 mt-1 text-sm bg-gray-200 rounded-md  ring-indigo-500 ring-opacity-50 focus:outline-none focus:bg-white focus:ring-4 shadow-sm" />
+            </div>
+            <div class="mt-6 flex flex-col items-center justify-center">
+                 <label for="description" class="font-bold text-white text-center  text-sm text-gray-900">Description</label>
+                <input type="text" id="description" class="text-sm w-3/4 h-60 px-3 mt-1 text-sm bg-gray-200 rounded-md  ring-orange-800  focus:outline-none focus:bg-white focus:ring-4 shadow-sm" />
+            </div>
+            <div class="flex flex-col items-center justify-center" >
+                <label for="title" class="text-sm text-center  mt-5 text-white font-bold text-gray-900">Add an image (url)</label>
+                <input type="text" id="img" class="w-3/4 h-10 px-3 mt-1 text-sm bg-gray-200 rounded-md  ring-indigo-500 ring-opacity-50 focus:outline-none focus:bg-white focus:ring-4 shadow-sm" />
+           </div>
+            <div class=" flex space-x-14 items-center justify-center">
+                <button class=" w-1/3 h-10  mt-8 text-center text-sm font-bold text-white bg-indigo-500 ring-orange-800  rounded-md hover:bg-opacity-90 focus:ring-4" type="submit" id="editButton">Edit</button>
+                <button class=" w-1/3 h-10  mt-8 text-center text-sm font-bold text-white bg-orange-800 ring-indigo-500 rounded-md hover:bg-opacity-90 focus:ring-4" type="reset" id="cancelButton">Cancel</button>
+            </div>
+            </form>    
+    </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./editForm.js"></script>
+</body>
+</html>

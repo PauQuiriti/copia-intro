@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="bg-teal-50">
+    <div class=" flex flex-row-reverse justify-between">
+    <div> 
+        <i aria-hidden="true" ></i>
+        <span id="welcome" class="mr-8"></span>
+    </div>
+    <a href="index.html"><img src="https://assets.stickpng.com/images/5ec7de5b180d720004dd447b.png" alt="" width="160"
+            class="mt-4 inline"></a>
+    </div>
+            <h1 class="text-center p-4 text-2xl mb-10">Tour y Fechas</h1>
+    <div class="grid gap-3 grid-cols-3 bg-black p-4 bg-red-900 w-5/6 mx-auto rounded-lg">
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Sat Jan 14</h3>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Inglewood, CA
+            </h3>
+        </div>
+        <div class="mx-auto  border-solid border-white border-2	p-1 bg-stone-600">
+            <button class="text-teal-50 text-center ticketButton"  id='Inglewood' onclick="soldOut('Inglewood', false)">Tickets</button>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Sat Jan 21</h3>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Auckland, New Zealand
+            </h3>
+        </div>
+        <div class="mx-auto  border-solid border-white border-2	p-1 bg-stone-600">
+            <button class="text-teal-50 text-center ticketButton" onclick="soldOut('Auckland', false)">Tickets</button>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Thu Jan 26</h3>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Dunedin, New Zealand
+            </h3>
+        </div>
+        <div class="mx-auto  border-solid border-white border-2	p-1 bg-stone-600">
+            <button class="text-teal-50 text-center ticketButton"  onclick="soldOut('Dunedin', true)">Tickets</button>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Sun Jan 29</h3>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2" >Brisbane, Australia
+            </h3>
+        </div>
+        <div class="mx-auto  border-solid border-white border-2	p-1 bg-stone-600"  >
+            <button class="text-teal-50 text-center ticketButton" id="Brisbane" onclick="soldOut('Brisbane', false)" >Tickets</button>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Sun Feb 19</h3>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Tokyo, Japan
+            </h3>
+        </div>
+        <div class="mx-auto  border-solid border-white border-2	p-1 bg-stone-600">
+            <button class="text-teal-50 text-center ticketButton"  onclick="soldOut('Tokyo', false)">Tickets</button>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Sat Apr 1</h3>
+        </div>
+        <div class="mx-auto">
+            <h3 class="text-teal-50 text-center mb-2">Las Vegas, NV
+            </h3>
+        </div>
+        <div class="mx-auto  border-solid border-white border-2	p-1 bg-stone-600">
+            <button class="text-teal-50 text-center ticketButton" onclick="soldOut('Las Vegas', true)" >Tickets</button>
+        </div>
+          
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script src="./index.js"></script>
+
+
+</body>
+
+</html>
