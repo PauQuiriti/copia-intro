@@ -51,7 +51,7 @@ const register = async (e)=> {
     const validated = validateInputs()
     if(validated){
         try{
-           await axios.post('https://copia-intro.vercel.app/api/user',objectToSend)
+           await axios.post('http://localhost:5000/api/user',objectToSend)
            swal({
             title: 'Success!',
             text: "Register was successfull",

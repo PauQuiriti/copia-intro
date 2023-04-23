@@ -48,7 +48,7 @@ const renderAlbums = (album) => {
   let favorites= user.favorites
   favorites.push({title: album.title})
   try{
-    await axios.put(`https://copia-intro.vercel.app/api/user/${user._id}`,{favorites})
+    await axios.put(`http://localhost:5000/api/user/${user._id}`,{favorites})
     const star = e.target
     star.style.color = 'yellow'
   }
@@ -64,7 +64,7 @@ const renderAlbums = (album) => {
 
 const getAlbums =  async () => {
   try{
-  const response = await axios.get('https://copia-intro.vercel.app/api/band')
+  const response = await axios.get('http://localhost:5000/api/band')
   response.data.data.map((album)=> {
     renderAlbums(album)})
   }
@@ -77,7 +77,7 @@ getAlbums()
     
   const deleteAlbum = async (album) => {
     try{
-      await axios.delete(`https://copia-intro.vercel.app/api/band/${album._id}`)
+      await axios.delete(`http://localhost:5000/api/band/${album._id}`)
       swal({
         title: 'Success!',
         text: `You deleted ${album.title}`,
