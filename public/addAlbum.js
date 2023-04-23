@@ -10,7 +10,7 @@ const addAlbum = async (e) => {
     e.preventDefault()
     try{
         getInputValues()
-        await axios.post('http://localhost:5000/band',objectToSend)
+        await axios.post('https://copia-intro.vercel.app/band',objectToSend)
         swal({
             title: 'Success!',
             text: 'Album added to the collection!',

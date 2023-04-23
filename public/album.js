@@ -62,7 +62,7 @@ const albumId = window.location.href.split('album=')[1]
 
 const getAlbum = async () =>{
   try{
-    const response = await axios.get( `http://localhost:5000/band/${albumId}`)
+    const response = await axios.get( `https://copia-intro.vercel.app/band/${albumId}`)
     albumToUse = response.data.data;
     renderAlbum(albumToUse);
     buttonAddSong.addEventListener('click', ()=> redirect(`./addSongs.html?album=${albumId}`))
@@ -85,7 +85,7 @@ const deleteSong = async (songId) => {
   const songsToReturn = albumToUse.songs.filter((song)=> song._id !== songId)
   albumToUse.songs = songsToReturn
   try{
-   const response = await axios.put(`http://localhost:5000/band/${albumId}`, albumToUse)
+   const response = await axios.put(`https://copia-intro.vercel.app/band/${albumId}`, albumToUse)
    swal({
     title: 'Success!',
     text: "You deleted a song",
