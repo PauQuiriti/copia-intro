@@ -7,12 +7,12 @@
 // })
 let user;
 const redirect = (id) => { window.location.href = `./album.html?album=${id}`}
-const getUser = async () => {
-    const id = localStorage.getItem('token')
-    const {data} = await axios.get(`https://copia-intro-vercel.app/user/${id}`)
-    user = data.data
-}
-getUser()
+// const getUser = async () => {
+//     const id = localStorage.getItem('token')
+//     const {data} = await axios.get(`https://copia-intro-vercel.app/user/${id}`)
+//     user = data.data
+// }
+// getUser()
 const renderAlbums = (album) => {
    const div = document.getElementsByClassName('grid grid-cols-3 gap-4 mt-12 py-30')[0]
    const newDiv = document.createElement('div')
