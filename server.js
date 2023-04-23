@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000
 const uri = 'mongodb+srv://paula:ErvAOHTvdSMx4J7B@techtalk.yxwdryb.mongodb.net/?retryWrites=true&w=majority'
 
 const corsOptions = {
-  origin: ['https://copia-intro-vercel.app', 'http://localhost:5000'], 
+  origin: ['https://copia-intro.vercel.app', 'http://localhost:5000'], 
 }
 
 app.use(express.static('public'))

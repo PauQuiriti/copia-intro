@@ -2,7 +2,7 @@ let album;
 let objectToSend = {}
 const albumId = window.location.href.split('album=')[1]
 const getAlbum = async () =>{
-    const {data} = await axios.get(`https://copia-intro-vercel.app/band/${albumId}`)
+    const {data} = await axios.get(`https://copia-intro.vercel.app/band/${albumId}`)
     album= data.data
 }
 getAlbum()
