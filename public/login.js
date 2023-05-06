@@ -10,7 +10,7 @@ const loginUser = async (e) => {
     e.preventDefault()
     getInputValues()
     try{
-     const response = await axios.post(`http://localhost:5000/api/login`,objectToSend)
+     const response = await axios.post(`/api/login`,objectToSend)
      localStorage.setItem('token',response.data.id) // aca seteariamos el token si les parece ok
      swal({
       title: 'Success!',

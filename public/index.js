@@ -48,7 +48,7 @@ const renderAlbums = (album) => {
   let favorites= user.favorites
   favorites.push({title: album.title})
   try{
-    await axios.put(`http://localhost:5000/api/user/${user._id}`,{favorites})
+    await axios.put(`/api/user/${user._id}`,{favorites})
     const star = e.target
     star.style.color = 'yellow'
   }

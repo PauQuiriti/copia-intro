@@ -3,7 +3,7 @@ let newSong = {}
 const albumId = window.location.search.split('album=')[1]
 const getAlbum = async () =>{
   try{
-   const {data} = await axios.get(`http://localhost:5000/api/band/${albumId}`)
+   const {data} = await axios.get(`/api/band/${albumId}`)
    album = data.data;
   }
   catch(error){
@@ -18,7 +18,7 @@ const addSong = async (e) => {
     inputs.map((input)=> newSong[input.id]=input.value)
     album.songs.push(newSong)
     try{
-     await axios.put(`http://localhost:5000/api/band/${album._id}`,album)
+     await axios.put(`/api/band/${album._id}`,album)
      swal({
       title: 'Success!',
       text: "You added a song",
