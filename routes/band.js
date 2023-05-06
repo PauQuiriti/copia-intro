@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const { Album } = require('../models')
+// const {validate} = require('../middleware/validate')
+
 
 /* listar todos los albums */
 router.get('/', async (req,res,next)=>{
@@ -19,8 +21,7 @@ router.post('/', async (req,res,next)=>{
       await Album.create(req.body)
       res.sendStatus(201)
     }
-    catch(error){
-      res.status(500).send({error: error.message})
+    catch(error){  res.status(500).send({error: error.message})
     }
   })
 

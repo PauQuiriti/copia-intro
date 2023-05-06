@@ -1,5 +1,6 @@
 
  let albumToUse;
+ const redirect = (url) => { window.location.href = url}
  function renderAlbum(album){
     const div = document.getElementById("view-album")
     const h1 = document.createElement('h1')
@@ -28,7 +29,7 @@
     }
 
  }
- const redirect = (url) => { window.location.href = url}
+
  
  const renderSong = (song, index)=>{
     const wrapperDiv = document.createElement('div')
@@ -62,7 +63,7 @@ const albumId = window.location.href.split('album=')[1]
 
 const getAlbum = async () =>{
   try{
-    const response = await axios.get( `/api/band/${albumId}`)
+    const response = await axios.get( `http://localhost:5000/band/${albumId}`)
     albumToUse = response.data.data;
     renderAlbum(albumToUse);
     buttonAddSong.addEventListener('click', ()=> redirect(`./addSongs.html?album=${albumId}`))
@@ -105,3 +106,9 @@ catch(error){
 }
 
 }
+const logOutButton = document.getElementById('logout')
+logOutButton.addEventListener('click', logOut)
+ const logOut = async () => {
+  await axios.post('http://localhost:5000/logout',{})
+  redirect('./login.html')
+ }

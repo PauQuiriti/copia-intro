@@ -11,7 +11,6 @@ const loginUser = async (e) => {
     getInputValues()
     try{
      const response = await axios.post(`/api/login`,objectToSend)
-     localStorage.setItem('token',response.data.id) // aca seteariamos el token si les parece ok
      swal({
       title: 'Success!',
       text: "",
@@ -23,7 +22,7 @@ const loginUser = async (e) => {
     catch(error){
       swal({
         title: 'Error!',
-        text: `${error}`,
+        text: `${error.response.data.message}`,
         icon: 'error',
         confirmButtonText: 'Cool'
       })

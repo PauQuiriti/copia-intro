@@ -7,17 +7,20 @@ const bandRoutes = require('./band')
 const jwt = require('jsonwebtoken')
 const secret = 'hola_como_va'
 
-function validate(req, res, next) {
-  const token = req.cookies.token;
-  const { payload } = jwt.verify(token, secret);
-  req.user = payload;
-  if (payload) return next();
-  res.sendStatus(401); // Unauthorized
-}
 
 router.use('/user', userRoutes)
 router.use('/band', bandRoutes)
 
+router.get("/me", (req, res) => {
+  try{
+    const token = req.cookies.token;
+    const  payload = jwt.verify(token, secret);
+    res.send(payload);
+  }
+  catch(error){
+    res.status(401).send(error)
+  }
+});
 
 /* login */
 router.post('/login', async (req,res,next)=>{
@@ -31,25 +34,24 @@ router.post('/login', async (req,res,next)=>{
         res.status(200).send(payload)
       }
      else{
-      res.status(404).send({message:'Wrong email or password'})
+      res.status(401).send({message:'Wrong email or password'})
      }
   }
   catch(error){
-    res.status(401).send({error:'Unauthorized'})
+    res.status(401).send({message:'User does not exist'})
   }
 })
 
-router.post('/validate', async (req,res,next)=>{
+router.post('/logout', async (req,res,next)=>{
   try{
-      const {token} = req.body
-      const { payload } = jwt.verify(token, secret);
-      if(payload){
-        res.status(200).send({user:payload})
-      }
+     res.clearCookie('token')
+     res.sendStatus(204)
   }
   catch(error){
-    res.status(401).send({error:'Unauthorized'})
+    res.sendStatus(500)
   }
 })
+
+
 
 module.exports = router

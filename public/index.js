@@ -6,13 +6,24 @@
 //     sigIn()
 // })
 let user;
+const onLoad = async () => {
+  try{
+    const response = await axios.get('/api/me')
+    user = response.data
+    const userString = `${response.data.name} ${response.data.lastName}`
+    const {data} = await axios.get(`/api/user/${user.id}`)
+    user = data.data
+    const userName = document.getElementById('user-name')
+    userName.textContent = userString
+  }
+catch(error){
+  window.location.href= './login.html'
+}
+ }
+
+ onLoad()
 const redirect = (id) => { window.location.href = `./album.html?album=${id}`}
-// const getUser = async () => {
-//     const id = localStorage.getItem('token')
-//     const {data} = await axios.get(`https://copia-intro.vercel.app/api/user/${id}`)
-//     user = data.data
-// }
-// getUser()
+
 const renderAlbums = (album) => {
    const div = document.getElementsByClassName('grid grid-cols-3 gap-4 mt-12 py-30')[0]
    const newDiv = document.createElement('div')
@@ -64,7 +75,7 @@ const renderAlbums = (album) => {
 
 const getAlbums =  async () => {
   try{
-  const response = await axios.get('http://localhost:5000/api/band')
+  const response = await axios.get('/api/band')
   response.data.data.map((album)=> {
     renderAlbums(album)})
   }
@@ -77,7 +88,7 @@ getAlbums()
     
   const deleteAlbum = async (album) => {
     try{
-      await axios.delete(`http://localhost:5000/api/band/${album._id}`)
+      await axios.delete(`/api/band/${album._id}`)
       swal({
         title: 'Success!',
         text: `You deleted ${album.title}`,
@@ -97,4 +108,9 @@ getAlbums()
     }
   }
 
-
+  const logOut = async () => {
+   await axios.post('/api/logout')
+   window.location.href= './login.html'
+  }
+  const logOutButton = document.getElementById('logout')
+  logOutButton.addEventListener('click',logOut)

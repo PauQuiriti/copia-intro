@@ -23,7 +23,7 @@ const addAlbum = async (e) => {
     catch(error){
         swal({
             title: 'Error!',
-            text: `${error.responseJSON.error}`,
+            text: `${error}`,
             icon: 'error',
             confirmButtonText: 'Cool'
           })   
