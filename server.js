@@ -11,6 +11,7 @@ const uri = 'mongodb+srv://paula:ErvAOHTvdSMx4J7B@techtalk.yxwdryb.mongodb.net/?
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/health", (req, res) => res.sendStatus(200));
 app.use('/api', routes)
 
 mongoose.connect(uri).
